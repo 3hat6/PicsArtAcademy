@@ -1,10 +1,11 @@
 # Bubble sort
 
 def bubble_sort(lst: list):
-    for i in range(len(lst) - 1):
-        if lst[i] > lst[i + 1]:
-            lst[i], lst[i + 1] = lst[i + 1], lst[i]
-    return lst
+    for j in range(len(lst)-1):    
+        for i in range(len(lst) - 1 - j):
+            if lst[i] > lst[i + 1]:
+                lst[i], lst[i + 1] = lst[i + 1], lst[i]
+        return lst
 
 
 # print(bubble_sort([12, 2, 3, 12, 45, 23, 123, 46]))
@@ -17,7 +18,7 @@ def argmin(lst: list):
 
 
 def selection_sort(lst: list):
-    for i in range(len(lst) - 1):
+    for i in range(len(lst)):
         lst1 = lst[i:]
         min_index = lst1.index(min(lst1)) + i
         lst[i], lst[min_index] = lst[min_index], lst[i]
